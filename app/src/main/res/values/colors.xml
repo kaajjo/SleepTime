@@ -10,4 +10,5 @@
     <color name="text_color_main">@color/black</color>
     <color name="text_color_secondary">#AF121212</color>
     <color name="background_main">@color/white</color>
+    <color name="background_toolbar">#FFFAFAFA</color>
 </resources>

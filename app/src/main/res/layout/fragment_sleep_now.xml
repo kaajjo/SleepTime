@@ -4,29 +4,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.SleepNowFragment">
+    tools:context=".ui.fragment.SleepNowFragment"
+    android:background="@color/background_main">
 
-    <TextView
-        android:id="@+id/now_header_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sleep_now_header"
-        android:textSize="18sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="6dp"
-        android:textColor="@color/text_color_main"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/background_toolbar"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/now_header_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sleep_now_header"
+                android:textSize="18sp"
+                android:textColor="@color/text_color_main"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
-    <TextView
-        android:id="@+id/now_below_header_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sleep_now_header_below"
-        android:textColor="@color/text_color_secondary"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@id/now_header_text"
-        app:layout_constraintTop_toBottomOf="@id/now_header_text"/>
+            <TextView
+                android:id="@+id/now_below_header_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sleep_now_header_below"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/now_header_text"
+                app:layout_constraintTop_toBottomOf="@id/now_header_text"/>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rview_sleep_now"
@@ -36,5 +49,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/now_below_header_text" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
