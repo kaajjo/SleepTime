@@ -8,4 +8,9 @@
     <!-- Sleep Now Fragment -->
     <string name="sleep_now_header">If I go sleep now</string>
     <string name="sleep_now_header_below">I should wake up at:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- MISC -->
+    <string name="indev_placeholder">In development（づ￣3￣）づ╭❤️～</string>
 </resources>
