@@ -4,4 +4,8 @@
     <!-- TabBar -->
     <string name="tab_sleep_now">Now</string>
     <string name="tab_at_time">At time</string>
+
+    <!-- Sleep Now Fragment -->
+    <string name="sleep_now_header">If I go sleep now</string>
+    <string name="sleep_now_header_below">I should wake up at:</string>
 </resources>
