@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.kodama.sleeptime.R
+import com.kodama.sleeptime.adapter.WakeUpTimeAdapter
 
 class SleepNowFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +20,12 @@ class SleepNowFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_sleep_now, container, false)
-        // TODO
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rview_sleep_now)
+
+        recyclerView.layoutManager = LinearLayoutManager(activity?.applicationContext)
+        recyclerView.adapter = activity?.applicationContext?.let { WakeUpTimeAdapter(it) }
+
         return view
     }
 

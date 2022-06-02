@@ -11,4 +11,5 @@
     <color name="text_color_secondary">#AF121212</color>
     <color name="background_main">@color/white</color>
     <color name="background_toolbar">#FFFAFAFA</color>
+    <color name="card_wake_up_background">#FFFFFFFF</color>
 </resources>
