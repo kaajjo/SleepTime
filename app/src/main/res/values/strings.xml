@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SleepTime</string>
+
+    <!-- TabBar -->
+    <string name="tab_sleep_now">Now</string>
+    <string name="tab_at_time">At time</string>
 </resources>
