@@ -24,7 +24,7 @@ class SleepNowFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.rview_sleep_now)
 
         recyclerView.layoutManager = LinearLayoutManager(activity?.applicationContext)
-        recyclerView.adapter = activity?.applicationContext?.let { WakeUpTimeAdapter(it) }
+        recyclerView.adapter = WakeUpTimeAdapter(requireContext())
 
         return view
     }
