@@ -14,7 +14,7 @@ import com.kodama.sleeptime.R
 import com.kodama.sleeptime.util.SleepInfo
 import java.time.LocalTime
 
-class WakeUpTimeAdapter(private val context: Context) : RecyclerView.Adapter<WakeUpTimeAdapter.ViewHolder>() {
+class WakeUpTimeAdapter(private val context: Context, startTime: LocalTime = LocalTime.now()) : RecyclerView.Adapter<WakeUpTimeAdapter.ViewHolder>() {
     private var wakeUpTimes = arrayListOf<LocalTime>()
     private var sleepLength = arrayListOf<LocalTime>()
     private var cycles = arrayListOf<Int>()
@@ -25,7 +25,7 @@ class WakeUpTimeAdapter(private val context: Context) : RecyclerView.Adapter<Wak
     init{
         val sleepInfo = SleepInfo()
         for(i in 0..totalCycles){
-            val sleepTimeResult = sleepInfo.getSleepTimes(i, minutesOffset)
+            val sleepTimeResult = sleepInfo.getSleepTimes(i, minutesOffset, startTime)
 
             wakeUpTimes.add(sleepTimeResult.first)
             sleepLength.add(sleepTimeResult.second)
