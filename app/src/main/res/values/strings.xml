@@ -18,6 +18,10 @@
     <string name="card_wake_up_time_colon">%1$s:%2$s</string>
     <string name="card_wake_up_time_nap">%1$sm</string>
 
+    <!-- Sleep At Fragment -->
+    <string name="sleep_at_header_no_time">If I go sleep at …</string>
+    <string name="sleep_at_header">If I go sleep at %1$s:%2$s</string>
+
     <string name="nap">nap</string>
     <!-- MISC -->
     <string name="indev_placeholder">In development（づ￣3￣）づ╭❤️～</string>
