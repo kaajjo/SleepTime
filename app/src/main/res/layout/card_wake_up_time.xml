@@ -54,7 +54,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:background="@android:color/transparent"
-            android:src="@drawable/alarm_add" />
+            android:src="@drawable/ic_alarm_add" />
 
     </RelativeLayout>
 
