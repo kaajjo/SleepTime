@@ -35,7 +35,6 @@ class SleepAtFragment : Fragment() {
         val fab = root.findViewById<FloatingActionButton>(R.id.at_fab)
         fab.setOnClickListener {
             val timePicker = MaterialTimePicker.Builder()
-                .setTimeFormat(TimeFormat.CLOCK_24H)
                 .setHour(LocalTime.now().hour)
                 .setMinute(LocalTime.now().minute)
                 .build()

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.provider.AlarmClock
+import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kodama.sleeptime.R
 import com.kodama.sleeptime.util.SleepInfo
 import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 
 class WakeUpTimeAdapter(private val context: Context, startTime: LocalTime = LocalTime.now()) : RecyclerView.Adapter<WakeUpTimeAdapter.ViewHolder>() {
     private var wakeUpTimes = arrayListOf<LocalTime>()
@@ -39,7 +41,11 @@ class WakeUpTimeAdapter(private val context: Context, startTime: LocalTime = Loc
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.wakeUpTimeText.text = wakeUpTimes[position].toString()
+        holder.wakeUpTimeText.text =
+            if(DateFormat.is24HourFormat(context))
+                wakeUpTimes[position].toString()
+            else
+                wakeUpTimes[position].format(DateTimeFormatter.ofPattern("hh:mm a")).toString()
 
         if(sleepLength[position].hour == 0){
             holder.sleepLengthText.text = context.getString(R.string.card_wake_up_time_nap, sleepLength[position].minute.toString().padStart(2,'0'))
