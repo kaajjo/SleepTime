@@ -49,12 +49,11 @@ class WakeUpTimeAdapter(private val context: Context, startTime: LocalTime = Loc
                 sleepLength[position].minute.toString().padStart(2,'0'))
         }
 
-        holder.cyclesCountText.text = when(cycles[position]){
-            0 -> context.getString(R.string.nap)
-            1 -> context.getString(R.string.card_wake_up_cycle, cycles[position].toString())
-            in 2..Int.MAX_VALUE -> context.getString(R.string.card_wake_up_cycle_plural, cycles[position].toString())
-            else -> context.getString(R.string.nap)
-        }
+        holder.cyclesCountText.text =
+            if(cycles[position] == 0)
+                context.getString(R.string.nap)
+            else
+                context.resources.getQuantityString(R.plurals.card_wake_up_cycles, cycles[position], cycles[position])
 
         holder.setAlarm.setOnClickListener {
             val alarmIntent = Intent(AlarmClock.ACTION_SET_ALARM)

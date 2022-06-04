@@ -12,8 +12,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Wake Up Time Card -->
-    <string name="card_wake_up_cycle">%1$s cycle</string>
-    <string name="card_wake_up_cycle_plural">%1$s cycles</string>
+    <plurals name="card_wake_up_cycles">
+        <item quantity="one">%d cycle</item>
+        <item quantity="other">%d cycles</item>
+    </plurals>
     <string name="card_wake_up_time">%1$sh %2$sm</string>
     <string name="card_wake_up_time_nap">%1$sm</string>
 
