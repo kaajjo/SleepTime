@@ -1,6 +1,7 @@
 package com.kodama.sleeptime.util
 
 import java.time.LocalTime
+import java.time.temporal.ChronoUnit
 import kotlin.math.floor
 import kotlin.math.min
 
@@ -25,7 +26,7 @@ class SleepInfo {
 
         val sleepLength = LocalTime.of(floor(sleepLengthMinutes / 60f).toInt(), sleepLengthMinutes % 60)
         var wakeUpAt = startTime.plusHours(sleepLengthMinutes / 60L)
-        wakeUpAt = wakeUpAt.plusMinutes(sleepLengthMinutes % 60L)
+        wakeUpAt = wakeUpAt.plusMinutes(sleepLengthMinutes % 60L).truncatedTo(ChronoUnit.MINUTES)
 
         return Pair(wakeUpAt, sleepLength)
     }

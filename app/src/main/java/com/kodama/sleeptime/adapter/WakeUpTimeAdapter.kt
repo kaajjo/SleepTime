@@ -39,9 +39,7 @@ class WakeUpTimeAdapter(private val context: Context, startTime: LocalTime = Loc
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.wakeUpTimeText.text = context.getString(R.string.card_wake_up_time_colon,
-            wakeUpTimes[position].hour.toString().padStart(2, '0'),
-            wakeUpTimes[position].minute.toString().padStart(2, '0'))
+        holder.wakeUpTimeText.text = wakeUpTimes[position].toString()
 
         if(sleepLength[position].hour == 0){
             holder.sleepLengthText.text = context.getString(R.string.card_wake_up_time_nap, sleepLength[position].minute.toString().padStart(2,'0'))

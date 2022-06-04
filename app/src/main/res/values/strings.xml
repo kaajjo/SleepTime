@@ -15,7 +15,6 @@
     <string name="card_wake_up_cycle">%1$s cycle</string>
     <string name="card_wake_up_cycle_plural">%1$s cycles</string>
     <string name="card_wake_up_time">%1$sh %2$sm</string>
-    <string name="card_wake_up_time_colon">%1$s:%2$s</string>
     <string name="card_wake_up_time_nap">%1$sm</string>
 
     <!-- Sleep At Fragment -->
