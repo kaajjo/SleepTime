@@ -1,6 +1,7 @@
 package com.kodama.sleeptime.ui.fragment
 
 import android.os.Bundle
+import android.text.format.DateFormat.is24HourFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,9 @@ import com.google.android.material.timepicker.MaterialTimePicker
 import com.kodama.sleeptime.R
 import com.kodama.sleeptime.adapter.WakeUpTimeAdapter
 import com.kodama.sleeptime.util.ThemeUtils
+import android.text.format.DateFormat
+import com.google.android.material.timepicker.TimeFormat.CLOCK_12H
+import com.google.android.material.timepicker.TimeFormat.CLOCK_24H
 import java.time.LocalTime
 
 class SleepAtFragment : Fragment() {
@@ -47,6 +51,7 @@ class SleepAtFragment : Fragment() {
         val fab = root.findViewById<FloatingActionButton>(R.id.at_fab)
         fab.setOnClickListener {
             val timePicker = MaterialTimePicker.Builder()
+                .setTimeFormat(if(is24HourFormat(requireContext())) CLOCK_24H else CLOCK_12H)
                 .setHour(LocalTime.now().hour)
                 .setMinute(LocalTime.now().minute)
                 .build()
