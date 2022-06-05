@@ -1,18 +1,19 @@
 package com.kodama.sleeptime.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.timepicker.MaterialTimePicker
-import com.google.android.material.timepicker.TimeFormat
 import com.kodama.sleeptime.R
 import com.kodama.sleeptime.adapter.WakeUpTimeAdapter
+import com.kodama.sleeptime.util.ThemeUtils
 import java.time.LocalTime
 
 class SleepAtFragment : Fragment() {
@@ -28,6 +29,17 @@ class SleepAtFragment : Fragment() {
 
         val recyclerView = root.findViewById<RecyclerView>(R.id.at_rview)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        val toolbar = root.findViewById<Toolbar>(R.id.sleep_at_toolbar)
+        toolbar.inflateMenu(R.menu.main_menu)
+
+        val themeUtils = ThemeUtils()
+        toolbar.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.menu_main_change_theme -> themeUtils.changeDayNightMode(requireContext())
+            }
+            true
+        }
 
         val headerText = root.findViewById<TextView>(R.id.at_header_text)
         val holderText = root.findViewById<TextView>(R.id.at_holder_text)
